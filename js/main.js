@@ -244,9 +244,9 @@
   var NAVY = "#023e7d";
   var NAVY_SOFT = "rgba(2, 62, 125, 0.62)";
   var LINE = "rgba(2, 62, 125, 0.22)";
-  var DISPLAY = '"Marcellus", serif';
-  var TEXT = '"Marcellus", serif';
-  var SCRIPT = '"Qwitcher Grypen", cursive';
+  var DISPLAY = '"The Seasons", serif';
+  var TEXT = '"The Seasons", serif';
+  var SCRIPT = '"Eyesome Script", cursive';
 
   function wrapLines(ctx, text, maxWidth) {
     var lines = [];
@@ -293,7 +293,7 @@
 
     block("RSVP CONFIRMATION", "400 26px " + DISPLAY, NAVY, 40, "6px");
     y += 120;
-    block("Tin & Michelle", "400 190px " + SCRIPT, NAVY, 150);
+    block("Tin & Michelle", "400 128px " + SCRIPT, NAVY, 170);
     block("SATURDAY, 6 MARCH 2027", "400 30px " + DISPLAY, NAVY, 46, "5px");
     y += 44;
     rule();
@@ -336,7 +336,7 @@
     if (!lastRsvp) return;
     var W = 1080;
     var fonts = document.fonts
-      ? Promise.all(['400 190px ' + SCRIPT, '400 26px ' + DISPLAY, '400 40px ' + TEXT].map(function (f) {
+      ? Promise.all(['400 128px ' + SCRIPT, '400 26px ' + DISPLAY, '400 40px ' + TEXT].map(function (f) {
           return document.fonts.load(f);
         }))
       : Promise.resolve();

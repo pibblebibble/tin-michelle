@@ -1,6 +1,12 @@
 /* Tin & Michelle · 6 March 2027
    Palette and type follow the Canva save-the-date card. */
 
+/* The couple's own fonts, as on the Canva card */
+@font-face { font-family: "The Seasons"; src: url("../assets/fonts/the-seasons-light.woff2") format("woff2"); font-weight: 300; font-style: normal; font-display: swap; }
+@font-face { font-family: "The Seasons"; src: url("../assets/fonts/the-seasons-regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "The Seasons"; src: url("../assets/fonts/the-seasons-bold.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Eyesome Script"; src: url("../assets/fonts/eyesome-script.otf") format("opentype"); font-weight: 400; font-style: normal; font-display: swap; }
+
 :root {
   --navy: #023e7d;          /* the card's single ink colour */
   --navy-soft: rgba(2, 62, 125, 0.62);
@@ -10,10 +16,10 @@
   --blush: #ee6d80;         /* the heart on the 6th */
   --error: #b3261e;
 
-  --display: "Marcellus", "Optima", "Palatino", serif;   /* closest free match to the card's serif; one weight */
-  --text: "Marcellus", "Optima", "Palatino", serif;
-  --heading: "Bodoni Moda", "Didot", "Bodoni MT", serif; /* large type only: rail, headings, subtitles */
-  --script: "Qwitcher Grypen", "Snell Roundhand", cursive;
+  --display: "The Seasons", "Didot", Georgia, serif;
+  --text: "The Seasons", "Didot", Georgia, serif;
+  --heading: "The Seasons", "Didot", Georgia, serif;
+  --script: "Eyesome Script", "Snell Roundhand", cursive;
 
   --gutter: clamp(20px, 5vw, 64px);
   --measure: 40rem;
@@ -30,7 +36,7 @@ body {
   font-family: var(--text);
   font-size: clamp(1.0625rem, 0.98rem + 0.35vw, 1.1875rem);
   font-weight: 400;
-  font-synthesis: none;   /* Marcellus has one weight; never fake a bold */
+  font-synthesis: none;
   line-height: 1.65;
   letter-spacing: 0.01em;
   -webkit-font-smoothing: antialiased;
@@ -98,10 +104,10 @@ a { color: inherit; }
   text-align: center;
   font-family: var(--script);
   font-weight: 400;
-  font-size: clamp(3rem, 16.5vw, 9rem);
-  line-height: 1;
+  font-size: clamp(2.25rem, 11.2vw, 9rem);
+  line-height: 1.5;
   white-space: nowrap;
-  padding-block: 0.12em 0.04em;
+  padding-block: 0.1em 0;
 }
 .names__amp { font-size: 0.8em; }
 
@@ -262,9 +268,11 @@ button.heart {
 .script-title {
   font-family: var(--script);
   font-weight: 400;
-  font-size: clamp(4.25rem, 16vw, 9rem);
-  line-height: 1;
+  font-size: clamp(2.75rem, 12vw, 6.5rem);
+  line-height: 1.5;
+  padding-bottom: 0.32em;   /* Eyesome's long descenders need clearance from the next line */
 }
+.script-title--plain { padding-bottom: 0; }
 
 /* The script's capital Q reads as a 2, so this one title is set in the display serif. */
 .script-title--plain {
@@ -476,14 +484,6 @@ button.heart {
   letter-spacing: 0.04em;
 }
 
-/* Bodoni Moda on the large pieces only. Its hairlines vanish at small sizes, so labels,
-   body text and calendar days stay in Marcellus. */
-.cover__rail, .calendar caption, .script-title--plain, .facts dd, .thanks__lead {
-  font-family: var(--heading);
-  font-weight: 500;
-}
-.facts dd, .thanks__lead { font-variation-settings: "opsz" 18; }
-
 /* ---------- Wider screens ---------- */
 
 @media (min-width: 900px) and (min-aspect-ratio: 1/1) {
@@ -498,7 +498,7 @@ button.heart {
     column-gap: clamp(28px, 4vw, 72px);
   }
   .cover__invite { font-size: clamp(0.875rem, 1.25vw, 1.25rem); letter-spacing: 0.2em; }
-  .names { align-self: end; font-size: clamp(5rem, 9.4vw, 13rem); }
+  .names { align-self: end; font-size: clamp(4rem, 7.2vw, 10rem); }
   .cover__venue { font-size: clamp(1.125rem, 1.45vw, 1.5rem); }
   .calendar { align-self: center; width: min(100%, 36rem); }
   .calendar caption { font-size: clamp(1.75rem, 2.8vw, 2.75rem); }
