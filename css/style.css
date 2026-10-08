@@ -350,6 +350,7 @@ button.heart {
   line-height: 1.5;
   margin-bottom: 0.7em;
 }
+.field legend { padding: 0; }
 .req { color: var(--blush); }
 
 .field input[type="text"],
@@ -379,6 +380,8 @@ button.heart {
 .error--form { margin-top: 0; }
 
 .choices { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+/* Long labels get a full-width row each on phones, so they never wrap or crowd */
+@media (max-width: 520px) { .choices--stack { grid-template-columns: 1fr; } }
 .choice { position: relative; margin: 0 !important; cursor: pointer; }
 .choice input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; }
 .choice span {
