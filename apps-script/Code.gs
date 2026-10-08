@@ -36,6 +36,9 @@ function doPost(e) {
     lock.waitLock(20000);
     const data = JSON.parse(e.postData.contents);
 
+    // The planning tracker asks for the guest list with { action: 'guests', key }.
+    if (data.action === 'guests') return guestList(data.key);
+
     const attending = data.attending === 'Yes' ? 'Yes' : data.attending === 'No' ? 'No' : '';
     const name = clean(data.name);
     const email = clean(data.email).toLowerCase();
@@ -73,6 +76,35 @@ function doPost(e) {
   } finally {
     lock.releaseLock();
   }
+}
+
+/**
+ * Returns every response to the planning tracker, but only with the right passcode.
+ * The passcode is not in this file: set it under Project Settings > Script properties
+ * as TRACKER_KEY, so it never ends up in the public repo.
+ */
+function guestList(key) {
+  const expected = PropertiesService.getScriptProperties().getProperty('TRACKER_KEY');
+  if (!expected) return json({ ok: false, error: 'Tracker passcode not set' });
+  if (String(key || '') !== expected) return json({ ok: false, error: 'Wrong passcode' });
+
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(RESPONSES);
+  const last = sheet.getLastRow();
+  const rows = last < 2 ? [] : sheet.getRange(2, 1, last - 1, HEADERS.length).getValues();
+  const guests = rows.map(function (row) {
+    return {
+      received: row[0] instanceof Date ? row[0].toISOString() : String(row[0]),
+      name: String(row[1]),
+      attending: String(row[2]),
+      plusOne: String(row[3]),
+      plusOneName: String(row[4]),
+      dietary: String(row[5]),
+      phone: String(row[6]),
+      email: String(row[7]),
+      message: String(row[8])
+    };
+  });
+  return json({ ok: true, guests: guests });
 }
 
 function doGet() {

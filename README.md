@@ -93,6 +93,12 @@ A form field lives in **four** places, and they must all agree:
 
 If steps 1 to 3 are done without step 4, the form still works but the new answer is silently dropped.
 
+### The planning tracker reads the same Sheet
+The couple's planning tracker (a separate repo, `tin-michelle-tracker`) shows the guest list live. It asks this
+script for the responses and must send a passcode. The passcode is **not** in the code: it is stored in the
+Sheet's script under **Project Settings → Script properties** as `TRACKER_KEY`. To change the passcode, change
+that value; everyone then re-enters it in the tracker.
+
 ### If the Sheet ever needs replacing
 1. Create a new Google Sheet, open **Extensions → Apps Script**, paste in all of `apps-script/Code.gs`, save.
 2. Choose the `setup` function and press **Run**. Approve the prompt (Google warns that the app is unverified: **Advanced → Go to project**).
