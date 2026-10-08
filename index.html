@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tin &amp; Michelle · 6 March 2027</title>
+  <meta name="description" content="We invite you to join us to celebrate our marriage. Saturday, 6 March 2027, English Tea House by Grand Margherita Hotel, Kuching.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400..700&family=Marcellus&family=Qwitcher+Grypen:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- 1. Cover: the save-the-date card itself -->
+  <header class="cover">
+    <p class="cover__invite">We invite you to join us to celebrate our marriage</p>
+    <p class="cover__rail" aria-hidden="true">Save the date</p>
+
+    <h1 class="names">Tin <span class="names__amp">&amp;</span> Michelle</h1>
+
+    <table class="calendar" aria-label="March 2027. The wedding is on Saturday the 6th.">
+      <caption>March 2027</caption>
+      <thead>
+        <tr><th scope="col">Sun</th><th scope="col">Mon</th><th scope="col">Tue</th><th scope="col">Wed</th><th scope="col">Thu</th><th scope="col">Fri</th><th scope="col">Sat</th></tr>
+      </thead>
+      <tbody>
+        <tr><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td><button class="heart" id="heart" type="button" aria-label="6, our wedding day">6</button></td></tr>
+        <tr><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td></tr>
+        <tr><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td></tr>
+        <tr><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td></tr>
+        <tr><td>28</td><td>29</td><td>30</td><td>31</td><td></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+
+    <div class="cover__foot">
+      <p class="cover__venue">
+        English Tea House by Grand Margherita Hotel<br>
+        Petra Jaya, 93050 Kuching, Sarawak<br>
+        Dinner starts at 7.00pm
+      </p>
+      <a class="btn" href="#rsvp">RSVP</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- 2. The evening at a glance -->
+    <section class="section evening" id="details" aria-labelledby="evening-title">
+      <h2 class="script-title" id="evening-title" data-reveal><span class="write">The evening</span></h2>
+      <dl class="facts">
+        <div class="facts__item" data-reveal>
+          <dt>Date</dt>
+          <dd>Saturday, 6 March 2027</dd>
+        </div>
+        <div class="facts__item" data-reveal>
+          <dt>Please arrive</dt>
+          <dd>6:00–6:15pm</dd>
+        </div>
+        <div class="facts__item" data-reveal>
+          <dt>Dinner</dt>
+          <dd>7.00pm</dd>
+        </div>
+        <div class="facts__item" data-reveal>
+          <dt>Dress code</dt>
+          <dd>Semi-casual</dd>
+        </div>
+      </dl>
+      <p class="evening__venue" data-reveal>
+        English Tea House by Grand Margherita Hotel<br>
+        Petra Jaya, 93050 Kuching, Sarawak
+      </p>
+      <a class="link" data-reveal href="https://www.google.com/maps/search/?api=1&query=English+Tea+House+by+Grand+Margherita+Hotel+Petra+Jaya+Kuching" target="_blank" rel="noopener">Open in Google Maps</a>
+    </section>
+
+    <!-- 3. RSVP -->
+    <section class="section rsvp" id="rsvp" aria-labelledby="rsvp-title">
+      <h2 class="script-title" id="rsvp-title" data-reveal><span class="write">Please r.s.v.p</span></h2>
+      <p class="rsvp__intro" id="rsvp-intro" data-reveal>
+        We kindly ask you to let us know if you are coming.<br>
+        Please r.s.v.p by 30th November 2026.
+      </p>
+
+      <p class="preview-note" id="preview-note" hidden>Preview mode: responses are not being saved yet.</p>
+
+      <form class="form" id="rsvp-form" novalidate>
+        <fieldset class="field">
+          <legend>Will you be attending? <span class="req" aria-hidden="true">*</span></legend>
+          <div class="choices">
+            <label class="choice"><input type="radio" name="attending" value="Yes" required><span>Joyfully accepts</span></label>
+            <label class="choice"><input type="radio" name="attending" value="No" required><span>Regretfully declines</span></label>
+          </div>
+          <p class="error" data-error-for="attending" hidden>Please let us know if you can make it.</p>
+        </fieldset>
+
+        <div class="field">
+          <label for="name">Full name <span class="req" aria-hidden="true">*</span></label>
+          <input id="name" name="name" type="text" autocomplete="name" required>
+          <p class="error" data-error-for="name" hidden>Please enter your full name.</p>
+        </div>
+
+        <div data-attending-only>
+          <fieldset class="field">
+            <legend>Will you be bringing a plus-one?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="plusOne" value="Yes"><span>Yes</span></label>
+              <label class="choice"><input type="radio" name="plusOne" value="No" checked><span>No</span></label>
+            </div>
+          </fieldset>
+
+          <div class="field" data-plus-one-only hidden>
+            <label for="plusOneName">Plus-one name <span class="req" aria-hidden="true">*</span></label>
+            <input id="plusOneName" name="plusOneName" type="text" autocomplete="off">
+            <p class="error" data-error-for="plusOneName" hidden>Please enter your plus-one's name.</p>
+          </div>
+
+          <div class="field">
+            <label for="dietary">Dietary requirements / allergies</label>
+            <input id="dietary" name="dietary" type="text" aria-describedby="dietary-hint">
+            <p class="hint" id="dietary-hint">e.g. vegetarian, no seafood, nut allergy, none</p>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="phone">Mobile / WhatsApp number <span class="req" aria-hidden="true">*</span></label>
+          <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required>
+          <p class="error" data-error-for="phone" hidden>Please enter a mobile or WhatsApp number.</p>
+        </div>
+
+        <div class="field">
+          <label for="email">Email address <span class="req" aria-hidden="true">*</span></label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+          <p class="error" data-error-for="email" hidden>Please enter a valid email address.</p>
+        </div>
+
+        <div class="field">
+          <label for="message">Message for Tin &amp; Michelle</label>
+          <textarea id="message" name="message" rows="3" aria-describedby="message-hint"></textarea>
+          <p class="hint" id="message-hint">Some words of wisdom or marriage advice? Hehe.</p>
+        </div>
+
+        <!-- Spam trap: real guests never see or fill this -->
+        <div class="trap" aria-hidden="true">
+          <label for="website">Leave this empty</label>
+          <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
+
+        <p class="error error--form" id="form-error" role="alert" hidden>Sorry, your RSVP did not go through. Please try again, or DM Michelle or Tin.</p>
+        <button class="btn btn--solid" type="submit">Send RSVP</button>
+      </form>
+
+      <div class="thanks" id="thanks-yes" role="status" tabindex="-1" hidden>
+        <p class="thanks__lead">Thank you for your RSVP!</p>
+        <p>We’re so looking forward to celebrating with you on 6 March 2027.</p>
+        <p>Dinner starts at 7.00pm at English Tea House by Grand Margherita Hotel, Petra Jaya.</p>
+        <p>Please arrive latest by 6:15pm. See you soon!</p>
+        <button class="btn" type="button" data-download>Download your RSVP confirmation</button>
+      </div>
+      <div class="thanks" id="thanks-no" role="status" tabindex="-1" hidden>
+        <p class="thanks__lead">Thank you for letting us know. We will miss you on the day.</p>
+        <button class="btn" type="button" data-download>Download your RSVP confirmation</button>
+      </div>
+    </section>
+
+    <!-- 4. Q & A -->
+    <section class="section qa" id="qa" aria-labelledby="qa-title">
+      <h2 class="script-title script-title--plain" id="qa-title" data-reveal>Q &amp; A</h2>
+      <p class="qa__intro" data-reveal>Questions we think our guests might be wondering, hmmm.</p>
+
+      <div class="qa__list">
+        <div class="dog-peek" id="dog-peek" aria-hidden="true"></div>
+        <details data-reveal>
+          <summary>When is the RSVP deadline?</summary>
+          <p>Please respond by 30th November 2026 so we can share a final count with our venue and vendors. We’d be so grateful if you could reply by then.</p>
+        </details>
+        <details data-reveal>
+          <summary>What time should I arrive for the dinner reception?</summary>
+          <p>Please arrive by 6:00–6:15pm. Dinner starts at 7.00pm, so a little early helps with seating and photos.</p>
+        </details>
+        <details data-reveal>
+          <summary>Is the food halal, and is any alcohol served?</summary>
+          <p>The dinner reception food is certified halal and there will be no alcohol served through the night.</p>
+        </details>
+        <details data-reveal>
+          <summary>Are children welcome?</summary>
+          <p>We love your little ones, and we know this is a special request. To keep the evening intimate and allow everyone to celebrate fully, we’ve chosen an adults-only wedding. We hope you can still join us and enjoy a night out.</p>
+        </details>
+        <details data-reveal>
+          <summary>What is the dress code?</summary>
+          <p>Semi-casual would be great!</p>
+        </details>
+        <details data-reveal>
+          <summary>Where can out-of-town guests stay?</summary>
+          <p>We recommend staying near Kuching Waterfront as there are plenty of hotels around. We’re happy to share more options if needed.</p>
+        </details>
+        <details data-reveal>
+          <summary>Is there parking?</summary>
+          <p>Yes, parking is available near the tea house, subject to first come, first served. You may also consider Grab as an alternative option.</p>
+        </details>
+        <details data-reveal>
+          <summary>Will there be any transport provided?</summary>
+          <p>We are providing a shuttle van for guests to return to the city centre (Waterfront area) after the dinner reception.</p>
+        </details>
+        <details data-reveal>
+          <summary>Whom should I contact with last-minute questions?</summary>
+          <p>Please DM Michelle or Tin.</p>
+        </details>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 5. Sign-off -->
+  <footer class="signoff">
+    <p class="signoff__line">with love, tin and michelle</p>
+    <img class="signoff__monogram" src="assets/monogram.png" alt="T and M monogram, Tin &amp; Michelle" width="799" height="316" loading="lazy">
+  </footer>
+
+  <!-- The surprise: tap the heart on the 6th -->
+  <div class="dog-cameo" id="dog-cameo" aria-hidden="true"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
